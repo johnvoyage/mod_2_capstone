@@ -1,0 +1,18 @@
+<h1>Create a New Activity</h1>
+
+<%= form_for @activity do |f| %>
+  <%= f.label :name %> <br>
+  <%= f.text_field :name %> <br>
+  <%= f.label :commitment %> <br>
+
+  <select name="activity[commitment]">
+    <option value="">Please select</option>
+    <option value="1" >Hobby</option>
+    <option value="2">Serious Hobby</option>
+    <option value="3">Part-time</option>
+    <option value="4">Full-time</option>
+    <option value="5">All In</option>
+  </select>
+
+  <%= f.submit %>
+<% end %>

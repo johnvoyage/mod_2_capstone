@@ -1,0 +1,8 @@
+<h1>Create a New Interest</h1>
+
+<%= form_for @interest do |f| %>
+  <%= f.label :name %> <br>
+  <%= f.text_field :name %> <br>
+
+  <%= f.submit %>
+<% end %>

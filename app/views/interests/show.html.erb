@@ -1,0 +1,18 @@
+<h1>I'm interested in <%= @interest.name %> ...</h1>
+
+<h3>What are you interested in <%= @interest.name %>?</h3>
+
+<%= form_for @interest.all_activities do |f| %>
+  <%= f.text_field :activity_name, list: 'activities_autocomplete' %>
+  <datalist id="activities_autocomplete">
+    <%= @interest.all_activities.each do |activity| %>
+      <option value="<%= activity.name %>" >
+    <% end %>
+  </datalist>
+<% end %>
+
+
+
+<%= link_to "Edit Interest #{@interest.name}", edit_interest_path(@interest) %> <br>
+<%= link_to "Delete Interest #{@interest.name}", @interest, method: :delete %>
+<!-- list all interests associated with this interest -->
