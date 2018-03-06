@@ -2,6 +2,7 @@ class InterestsController < ApplicationController
 
   before_action :set_activity, only: [:show, :update, :edit, :destroy]
 
+
   def index
     @interests = Interest.all
   end

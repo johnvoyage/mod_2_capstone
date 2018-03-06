@@ -1,6 +1,7 @@
 class ActivitiesController < ApplicationController
 
   before_action :set_activity, only: [:show, :update, :edit, :destroy]
+  before_action :require_login
 
   def index
     @activities = Activity.all
@@ -47,5 +48,5 @@ class ActivitiesController < ApplicationController
   def activity_params
     params.require(:activity).permit(:name, :commitment)
   end
-  
+
 end
