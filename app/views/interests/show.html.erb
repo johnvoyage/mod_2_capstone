@@ -1,14 +1,17 @@
-<h1>I'm interested in <%= @interest.name %> ...</h1>
+<h1>I'm interested in <%= @interest.name.downcase %> ...</h1>
 
-<h3>What are you interested in <%= @interest.name %>?</h3>
+<h3> <%= @interest.what_activity_question %> </h3>
 
-<%= form_for @interest.all_activities do |f| %>
-  <%= f.text_field :activity_name, list: 'activities_autocomplete' %>
+
+<%= form_for @activity do |f| %>
+  <%= f.label :name, "Options (or create your own)" %>
+  <%= f.text_field :name, list: 'activities_autocomplete' %>
   <datalist id="activities_autocomplete">
-    <%= @interest.all_activities.each do |activity| %>
+    <% @interest.all_activities.each do |activity| %>
       <option value="<%= activity.name %>" >
     <% end %>
   </datalist>
+  <%= f.submit %>
 <% end %>
 
 

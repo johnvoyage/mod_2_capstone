@@ -11,12 +11,32 @@ class Interest < ApplicationRecord
     end.map do |selected_ia|
       Activity.find(selected_ia.activity_id)
     end
-
   end
 
-  def activity_name
-    self.name
+  def what_activity_question
+    case self.name
+    when "Learning"
+      "What are you interested in learning about?"
+    when "Traveling"
+      "Where are you interested in travelling to?"
+    when "Moving"
+      "Where are you interested in moving to?"
+    when "Volunteering"
+      "Who/what are you interested in helping out?"
+    when "Interest 5ing"
+      "TBD"
+    when "Interest 6ing"
+      "TBD"
+    end
   end
+
+  Interest.create(name: "Learning")
+  Interest.create(name: "Traveling")
+  Interest.create(name: "Volunteering")
+  Interest.create(name: "Moving")
+  Interest.create(name: "Interest 5ing")
+  Interest.create(name: "Interest 6ing")
+
 end
 
 #

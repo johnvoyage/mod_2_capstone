@@ -20,6 +20,7 @@ class InterestsController < ApplicationController
   end
 
   def show
+    @activity = Activity.new
   end
 
   def edit
