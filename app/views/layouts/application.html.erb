@@ -5,23 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mod2Capstone</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous"> -->
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <section class="section">
+  <body class="has-navbar-fixed-top">
+
+  <div id="bg">
+    <%= image_tag("copenhagen-2.jpg", :alt => "Copenhagen", :id => "bg-image-1", :class => "bg-image") %>
+  </div>
+
+    <!-- Navbar -->
+    <nav class="navbar is-dark is-fixed-top is-transparent is-boxed" role="navigation" aria-label="main navigation">
+      <div class="container">
+        <div class="navbar-brand">
+          <%# link_to "", root_path, class: "navbar-item" %>
+          <a class="navbar-item" href="">
+            <!-- <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28"> -->
+            <!-- <img src="" alt="" width="112" height="28"> -->
+            <div style="font-size:1rem">
+              <i class="fa fa-users fa-3x"></i>
+            </div>
+          </a>
+          <div class="navbar-burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <!-- <p class="control">
+                <a class="button is-small">
+                  <span class="icon">
+                    <i class="fa fa-user-plus"></i>
+                  </span>
+                  <span>
+                    Register
+                  </span>
+                </a>
+              </p> -->
+              <p class="control">
+                <%= link_to "Sign Up", signup_path, class: "button is-small is-info is-outlined" %>
+                <!-- <a class="button is-small is-info is-outlined">
+                  <span class="icon">
+                    <i class="fa fa-user"></i>
+                  </span>
+                  <span>Sign Up</span>
+                </a> -->
+              </p>
+              <p class="control">
+                <%= link_to "Log In", login_path, class: "button is-small is-info is-outlined" %>
+                <!-- <a class="button is-small is-info is-outlined">
+                  <span class="icon">
+                    <i class="fa fa-user"></i>
+                  </span>
+                  <span>Login</span>
+                </a> -->
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+
+
+
+    <!-- <section class="section"> -->
       <div class="container">
 
       <%= yield %>
 
       </div>
-    </section>
+    <!-- </section> -->
 
+    <script async type="text/javascript" src="../js/bulma.js"></script>
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
   </body>
 </html>
