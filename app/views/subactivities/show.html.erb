@@ -1,0 +1,42 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>
+
+<h1> Welcome to the SUBACTIVITY page for COMMITMENT </h1>
+
+<!-- member list -->
+<ul>
+  <% @subactivity.all_users.each do |user| %>
+    <li><%= user.first_name %> <%= user.last_name %> <br>
+    <%= link_to(user.email, user_path(user)) %></li>
+  <% end %>
+</ul>
+<!-- message board -->
+<!-- planning calendar -->
+<!-- embed google map -->
+<!-- pull in a list of related links? -->
+
+
+
+
+
+
+<!-- HOBBYISTS -->
+  <!-- if commitment is 1 -->
+    <!-- WEBPAGE FOR HOBBYISTS -->
+  <!-- end -->
+
+<!-- PART TIMERS -->
+  <!-- if commitment is 2 -->
+    <!-- WEBPAGE FOR PART TIMERS -->
+  <!-- end -->
+
+<!-- INTENSE -->
+  <!-- if commitment is 2 -->
+    <!-- WEBPAGE FOR PART TIMERS -->
+  <!-- end -->

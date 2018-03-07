@@ -1,7 +1,46 @@
-<h1>Activity</h1>
-<h3><%= @activity.name %></h3>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h1>I'm interested in <%= @activity.name_of_interest %> <%= @activity.name %>...</h1>
+
+<h1> <%= @activity.description %> </h1>
+
+<%= form_for @subactivity do |f| %>
+  <%= f.label :name, "#{@activity.what_subactivity_question} " %>
+  <%= f.text_field :name, list: 'subactivities_autocomplete' %>
+  <datalist id="subactivities_autocomplete">
+    <% @activity.all_subactivities.each do |subactivity| %>
+      <option value="<%= subactivity.name %>" >
+    <% end %>
+  </datalist>
+
+  <%= f.label "Your Commitment Level: " %>
+  <%# f.number_field :commitment %>
+  <select name="commitment">
+    <option value="" selected>Your Choice</option>
+    <option value="1">Hobby Level</option>
+    <option value="2">Part Time</option>
+    <option value="3">All In</option>
+  </select>
+
+  <%= f.hidden_field(:interest_id, value: @activity.id ) %>
+  <%= f.submit "Submit"%>
+<% end %>
 
 
-<%= link_to "Edit Activity #{@activity.name}", edit_activity_path(@activity) %> <br>
-<%= link_to "Delete Activity #{@activity.name}", @activity, method: :delete %>
+
+<% if is_admin? %>
+  <%= link_to "Edit Activity #{@activity.name}", edit_activity_path(@activity) %>
+  <%= link_to "Delete Activity #{@activity.name}", @activity, method: :delete %>
+<% end %>
 <!-- list all interests associated with this activity -->

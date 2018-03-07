@@ -5,9 +5,33 @@ module WelcomesHelper
     Interest.all[num-1].name
   end
 
-  def random_three_interests
-    Interest.all.sample(3)
+  def random_three_activities(interest_id)
+    Activity.all.select do |activity|
+      activity.interest_id == interest_id
+    end.sample(3)
+    # .map do |activity|
+    #   activity.name
+    # end
   end
+
+  def random_three_subactivities(interest_id)
+    random_three = random_three_activities(interest_id)
+    random_three.map do |activity|
+      Subactivity.all.select do |subactivity|
+        subactivity.activity_id == activity.id
+      end.compact.flatten
+    end
+  end
+
+
+
+
+  # def random_three_subactivities
+  #   # Subactivity.all.select do |subactivity|
+  #   #   activity_id = Activity.all.sample.id
+  #   #   subactivity.id == activity_id
+  #   end.sample(3)
+  # end
 
   def interest_example(interest_num, sample_num)
     sample = random_three_interests[sample_num-1]

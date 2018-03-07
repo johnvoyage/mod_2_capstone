@@ -73,6 +73,8 @@
                 Remember me
               </label>
             </div>
+            <%= f.label :admin %>
+            <%= f.check_box(:admin, class: "checkbox" ) %>
 
             <%= f.submit "Sign Up!", class: "button is-dark is-fullwidth" %>
             <!-- "button is-block is-large is-fullwidth" -->

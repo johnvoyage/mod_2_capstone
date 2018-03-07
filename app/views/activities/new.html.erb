@@ -1,3 +1,16 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 <h1>Create a New Activity</h1>
 
 <% @activity.errors.full_messages.each do |error| %>
@@ -7,15 +20,15 @@
 
 <%= form_for @activity do |f| %>
   <%= f.label :name %> <br>
-  <%= f.text_field :name %> <br>
-  <%= f.label :commitment %> <br>
+  <% if @activity.name %>
+    <%= f.text_field :name, placeholder: @activity.name %> <br>
+  <% else %>
+    <%= f.text_field :name %> <br>
+  <% end %>
 
-  <select name="activity[commitment]">
-    <option value="">Please select</option>
-    <option value="1">Hobby</option>
-    <option value="2">Part-time</option>
-    <option value="3">Full-time</option>
-  </select>
+  <%= f.label :description %><br>
+  <%= f.text_area :description, placeholder: "Add a description" %><br>
+
 
   <%= f.submit %>
 <% end %>

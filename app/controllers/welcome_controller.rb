@@ -9,8 +9,5 @@ class WelcomeController < ApplicationController
 
   #ADD NAME LOGIC TO WELCOME
 
-  def name_of_interest(num)
-    Interest.all[num-1].name
-  end
 
 end

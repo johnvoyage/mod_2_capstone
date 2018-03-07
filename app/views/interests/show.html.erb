@@ -1,3 +1,9 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+
 <h1>I'm interested in <%= @interest.name.downcase %>...</h1>
 
 
@@ -9,11 +15,12 @@
       <option value="<%= activity.name %>" >
     <% end %>
   </datalist>
-  <%= f.submit %>
+
+  <%= f.hidden_field(:interest_id, value: @interest.id ) %>
+  <%= f.submit "Submit"%>
 <% end %>
 
+ 
 
 
-<%= link_to "Edit Interest #{@interest.name}", edit_interest_path(@interest) %> <br>
-<%= link_to "Delete Interest #{@interest.name}", @interest, method: :delete %>
 <!-- list all interests associated with this interest -->
