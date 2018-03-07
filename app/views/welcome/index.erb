@@ -3,39 +3,116 @@
 <h3>I'm interested in...</h3>
 
 
-  <div class="section">
-
+  <!-- <div class="section"> -->
+  <div class="welcome-index-container">
     <div class="columns">
       <div class="column is-one-third text_center">
-        <%= link_to(Interest.all[0].name, 'interests/1') %>
-        <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch. Butcher polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal sustainable mixtape swag wolf squid tote bag. Tote bag cronut semiotics, raw denim deep v taxidermy messenger bag.</p>
-      </div>
+        <div class="card">
+          <div class="card-image has-text-centered">
+            <div style="font-size: 4rem">
+              <i class="fa fa-chess"></i>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <h4><%= link_to(Interest.all[0].name, 'interests/1') %></h4>
+              <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch.</p>
+            </div>
+          </div>
+        </div>
+      </div> <!-- column -->
       <div class="column is-one-third text_center">
-        <%= link_to(Interest.all[1].name, 'interests/2') %>
-        <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch. Butcher polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal sustainable mixtape swag wolf squid tote bag. Tote bag cronut semiotics, raw denim deep v taxidermy messenger bag.</p>
-      </div>
+        <div class="card">
+          <div class="card-image has-text-centered">
+            <div style="font-size: 4rem">
+              <i class="fa fa-globe"></i>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <h4><%= link_to(Interest.all[1].name, 'interests/1') %></h4>
+              <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch.</p>
+            </div>
+          </div>
+        </div>
+      </div> <!-- column -->
       <div class="column is-one-third text_center">
-        <%= link_to(Interest.all[2].name, 'interests/3') %>
-        <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch. Butcher polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal sustainable mixtape swag wolf squid tote bag. Tote bag cronut semiotics, raw denim deep v taxidermy messenger bag.</p>
-      </div>
-    </div>
-    <div class="columns">
-      <div class="column is-one-third text_center">
-        <%= link_to(Interest.all[3].name, 'interests/4') %>
-        <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch. Butcher polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal sustainable mixtape swag wolf squid tote bag. Tote bag cronut semiotics, raw denim deep v taxidermy messenger bag.</p>
-      </div>
-      <div class="column is-one-third text_center">
-        <%= link_to(Interest.all[4].name, 'interests/5') %>
-        <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch. Butcher polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal sustainable mixtape swag wolf squid tote bag. Tote bag cronut semiotics, raw denim deep v taxidermy messenger bag.</p>
-      </div>
-      <div class="column is-one-third text_center">
-        <%= link_to(Interest.all[5].name, 'interests/6') %>
-        <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch. Butcher polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal sustainable mixtape swag wolf squid tote bag. Tote bag cronut semiotics, raw denim deep v taxidermy messenger bag.</p>
-      </div>
-    </div>
+        <div class="card">
+          <div class="card-image has-text-centered">
+            <div style="font-size: 4rem">
+              <i class="fas fa-graduation-cap"></i>
+              <!-- <i class="fa fa-money-bill"></i> -->
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <h4><%= link_to(Interest.all[2].name, 'interests/1') %></h4>
+              <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch.</p>
+            </div>
+          </div>
+        </div>
+      </div> <!-- column -->
+    </div> <!-- columns -->
 
+    <div class="columns columns-below">
+      <div class="column is-one-third text_center">
+        <div class="card">
+          <div class="card-image has-text-centered">
+            <div style="font-size: 4rem">
+              <!-- <i class="fab fa-fort-awesome"></i> -->
+              <i class="fas fa-map"></i>
+              <!-- <i class="fal fa-futbol"></i> -->
+              <!-- <i class="fa fa-money-bill"></i> -->
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <h4><%= link_to(Interest.all[3].name, 'interests/1') %></h4>
+              <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch.</p>
+            </div>
+          </div>
+        </div>
+      </div> <!-- column -->
+      <div class="column is-one-third text_center">
+        <div class="card">
+          <div class="card-image has-text-centered">
+            <div style="font-size: 4rem">
+              <!-- <i class="fal fa-futbol"></i> -->
+              <!-- <i class="fa fa-glass-martini"></i> -->
+              <!-- <i class="fa fa-music"></i> -->
+              <i class="far fa-hand-paper"></i>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <h4><%= link_to(Interest.all[4].name, 'interests/1') %></h4>
+              <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch.</p>
+            </div>
+          </div>
+        </div>
+      </div> <!-- column -->
+      <div class="column is-one-third text_center">
+        <div class="card">
+          <div class="card-image has-text-centered">
+            <div style="font-size: 4rem">
+              <!-- <i class="fal fa-futbol"></i> -->
+              <!-- <i class="fa fa-glass-martini"></i> -->
+              <!-- <i class="fa fa-music"></i> -->
+              <i class="fab fa-fort-awesome"></i>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <h4><%= link_to(Interest.all[5].name, 'interests/1') %></h4>
+              <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch.</p>
+            </div>
+          </div>
+        </div>
+      </div> <!-- column -->
+    </div> <!-- columns -->
   </div>
-</div>
+  <!-- </div> --> <!-- section -->
 
-<%= link_to "SIGN UP", signup_path %>
-<%= link_to "SIGN IN", login_path %>
+
+<%# link_to "SIGN UP", signup_path %>
+<%# link_to "SIGN IN", login_path %>
