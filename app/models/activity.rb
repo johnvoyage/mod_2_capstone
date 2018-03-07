@@ -1,9 +1,9 @@
 class Activity < ApplicationRecord
 
-  has_many :interest_activities
-  has_many :interests, through: :interest_activities
+  belongs_to :interest
+  has_many :subactivities
 
-  validates :name, :commitment, presence: true
+  validates :name, presence: true
   validates :name, uniqueness: true
 
   # def commitment_level

@@ -1,6 +1,6 @@
 <h1>Activity</h1>
 <h3><%= @activity.name %></h3>
-<h3><%= @activity.commitment %></h3>
+
 
 <%= link_to "Edit Activity #{@activity.name}", edit_activity_path(@activity) %> <br>
 <%= link_to "Delete Activity #{@activity.name}", @activity, method: :delete %>

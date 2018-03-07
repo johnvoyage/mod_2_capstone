@@ -2,32 +2,33 @@ class Interest < ApplicationRecord
 
   has_many :user_interests
   has_many :users, through: :user_interests
-  has_many :interest_activities
-  has_many :activities, through: :interest_activities
+  has_many :activities
 
   def all_activities
-    InterestActivity.all.select do |interestactivity|
-      interestactivity.interest_id == self.id
-    end.map do |selected_ia|
-      Activity.find(selected_ia.activity_id)
+    Activity.all.select do |activity|
+      activity.interest_id == self.id
     end
   end
 
   def what_activity_question
     case self.name
-    when "Learning"
+    when name_of_interest(1)
       "What are you interested in learning about?"
-    when "Traveling"
+    when name_of_interest(2)
       "Where are you interested in travelling to?"
-    when "Moving"
+    when name_of_interest(3)
       "Where are you interested in moving to?"
-    when "Volunteering"
+    when name_of_interest(4)
       "Who/what are you interested in helping out?"
-    when "Interest 5ing"
+    when name_of_interest(5)
       "TBD"
-    when "Interest 6ing"
+    when name_of_interest(6)
       "TBD"
     end
+  end
+
+  def name_of_interest(num)
+    Interest.all[num-1].name
   end
 
   Interest.create(name: "Learning")

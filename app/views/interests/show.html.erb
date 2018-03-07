@@ -1,10 +1,8 @@
-<h1>I'm interested in <%= @interest.name.downcase %> ...</h1>
-
-<h3> <%= @interest.what_activity_question %> </h3>
+<h1>I'm interested in <%= @interest.name.downcase %>...</h1>
 
 
 <%= form_for @activity do |f| %>
-  <%= f.label :name, "Options (or create your own)" %>
+  <%= f.label :name, "#{@interest.what_activity_question}" %>
   <%= f.text_field :name, list: 'activities_autocomplete' %>
   <datalist id="activities_autocomplete">
     <% @interest.all_activities.each do |activity| %>

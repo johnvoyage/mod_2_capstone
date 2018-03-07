@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :subactivities
   resources :activities
   resources :interests
   resources :users
