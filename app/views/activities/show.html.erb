@@ -11,7 +11,7 @@
 <br>
 <br>
 
-<h1>I'm interested in <%= @activity.name_of_interest %> <%= @activity.name %>...</h1>
+<h1>I'm interested in <%= @activity.name_of_interest %> <%= @activity.insert_preposition %> <%= @activity.name %>...</h1>
 
 <h1> <%= @activity.description %> </h1>
 
@@ -23,15 +23,6 @@
       <option value="<%= subactivity.name %>" >
     <% end %>
   </datalist>
-
-  <%= f.label "Your Commitment Level: " %>
-  <%# f.number_field :commitment %>
-  <select name="commitment">
-    <option value="" selected>Your Choice</option>
-    <option value="1">Hobby Level</option>
-    <option value="2">Part Time</option>
-    <option value="3">All In</option>
-  </select>
 
   <%= f.hidden_field(:interest_id, value: @activity.id ) %>
   <%= f.submit "Submit"%>

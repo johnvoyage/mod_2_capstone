@@ -21,6 +21,17 @@ class Activity < ApplicationRecord
   #   end
   # end
 
+  def insert_preposition
+    case self.interest_id
+    when 2 || 4
+      " to "
+    when 3
+      " for "
+    else
+      ""
+    end
+  end
+
   def name_of_interest
     Interest.find(interest_id).name.downcase
   end

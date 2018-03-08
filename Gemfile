@@ -51,6 +51,7 @@ group :development do
 
   ### ANTHONY/JOHN ADDS
   gem 'rails-erd', require: false
+  gem 'mechanize'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
