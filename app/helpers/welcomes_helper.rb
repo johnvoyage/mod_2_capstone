@@ -24,7 +24,6 @@ module WelcomesHelper
         subactivity.activity_id == activity.id
       end.sample(1)[0]
     end
-    byebug
     [activities, subactivities]
   end
 
