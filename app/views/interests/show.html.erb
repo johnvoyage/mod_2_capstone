@@ -1,26 +1,48 @@
-<br>
-<br>
-<br>
-<br>
-<br>
+<!-- <h1>I'm interested in <%# @interest.name.downcase %>...</h1> -->
+<!-- <section class="hero is-fullheight">
+  <div class="hero-body"> -->
+    <div class="container has-text-centered">
+      <div class="column is-8 is-offset-2">
+        <!-- <div class="box"> -->
 
-<h1>I'm interested in <%= @interest.name.downcase %>...</h1>
+          <div class="box banner-box cta ">
+              <p class="has-text-centered">
+                I'm interested in <%= @interest.name.downcase %>...
+              </p>
+          </div>
+
+          <%= form_for @activity do |f| %>
+            <%# f.label :name, "#{@interest.what_activity_question}" %>
+            <div class="field">
+              <div class="control">
+                <%= f.text_field :name, list: 'activities_autocomplete', class: "input", placeholder: "#{@interest.what_activity_question}" %>
+              </div>
+            </div>
+            <div class="field">
+              <!-- <div class="control"> -->
+                <datalist id="activities_autocomplete">
+                  <% @interest.all_activities.each do |activity| %>
+                    <option value="<%= activity.name %>" >
+                  <% end %>
+                </datalist>
+              <!-- </div> -->
+            </div>
+
+            <%= f.hidden_field(:interest_id, value: @interest.id ) %>
+            <%= f.submit "Keep Going!", class: "button is-dark" %>
+          <% end %>
+
+          <!-- <div class="field">
+            <div class="control">
+              <%# f.email_field :email, class: "input", placeholder: "Email", required: true, autofocus: true %>
+            </div>
+          </div> -->
 
 
-<%= form_for @activity do |f| %>
-  <%= f.label :name, "#{@interest.what_activity_question}" %>
-  <%= f.text_field :name, list: 'activities_autocomplete' %>
-  <datalist id="activities_autocomplete">
-    <% @interest.all_activities.each do |activity| %>
-      <option value="<%= activity.name %>" >
-    <% end %>
-  </datalist>
-
-  <%= f.hidden_field(:interest_id, value: @interest.id ) %>
-  <%= f.submit "Submit"%>
-<% end %>
-
- 
+      </div>
+    </div>
+  <!-- </div>
+</section> -->
 
 
 <!-- list all interests associated with this interest -->

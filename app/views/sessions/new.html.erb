@@ -1,29 +1,42 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<section class="hero is-fullheight">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="column is-4 is-offset-4">
+        <div class="box">
+          <h3 class="title">Log In</h3>
+          <!-- <p class="subtitle">Add your details to proceed.</p> -->
+        </div>
+        <div class="box">
+          <figure class="avatar">
+            <img src="https://placehold.it/128x128">
+          </figure>
 
 
+          <%= form_for(:session, url: login_path) do |f| %>
 
-<% provide(:title, "Log in") %>
-<h1>Log in</h1>
+            <%# f.label :email %>
+            <div class="field">
+              <div class="control">
+                <%= f.email_field :email, class: "input", placeholder: "Email", required: true, autofocus: true %>
+              </div>
+            </div>
+                <%# f.label :password %>
+            <div class="field">
+              <div class="control">
+                <%= f.password_field :password, class: "input", placeholder: "Password", required: true, autofocus: false %>
+              </div>
+            </div>
 
-<!-- <div class="row">
-  <div class="col-md-6 col-md-offset-3"> -->
-    <%= form_for(:session, url: login_path) do |f| %>
+            <%= f.submit "Log in", class: "button is-dark is-fullwidth" %>
+          <% end %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %>
-
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
-  <!-- </div>
-</div> -->
+        </div>
+        <p class="has-text-grey">
+          <a href="../">Sign Up</a> &nbsp;·&nbsp;
+          <a href="../">Forgot Password</a> &nbsp;·&nbsp;
+          <a href="../">Need Help?</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

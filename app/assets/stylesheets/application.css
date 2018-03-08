@@ -14,14 +14,22 @@
  *= require_self
  */
 
- #bg {
+ /* font-family: 'Poppins', sans-serif;
+ font-family: 'Titillium Web', sans-serif;
+ font-family: 'Roboto Mono', monospace;
+ font-family: 'Indie Flower', cursive; */
+
+.main-container {
+  margin-top: 6rem;
+}
+ .bg {
    position: fixed;
    top: -50%;
    left: -50%;
    width: 200%;
    height: 200%;
  }
- #bg img {
+ .bg img {
    position: absolute;
    top: 0;
    left: 0;
@@ -34,6 +42,23 @@
 
 .navbar.is-fixed-top {
   height: 80px;
+}
+.is-info {
+  color: inherit;
+}
+.navbar-item.is-active, .navbar-item:hover {
+  background-color: #118fe4;
+  color: #fff;
+}
+
+.banner-box {
+  font-size: 1.5rem;
+  font-weight: 600;
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'Indie Flower', cursive;
+  /* font-family: 'Titillium Web', sans-serif; */
+  /* font-family: 'Roboto Mono', monospace; */
+  /* font-family: 'Muli', sans-serif; */
 }
 
 .welcome-index-container {
