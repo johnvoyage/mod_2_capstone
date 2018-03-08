@@ -19,8 +19,9 @@
               <h4><%= link_to(name_of_interest(1), 'interests/1') %></h4>
               <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch.</p>
               <ul>
-                <li><%= random_three_activities(1) %></li>
-
+                <% random_three_subactivities(1).each do |sentence| %>
+                  <li><%= sentence %></li>
+                <% end %>
               </ul>
             </div>
           </div>
@@ -38,7 +39,9 @@
               <h4><%= link_to(name_of_interest(2), 'interests/2') %></h4>
               <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch.</p>
               <ul>
-                <li><%= random_three_activities(2) %></li>
+                <% random_three_subactivities(2).each do |sentence| %>
+                  <li><%= sentence %></li>
+                <% end %>
               </ul>
             </div>
           </div>
@@ -57,7 +60,9 @@
               <h4><%= link_to(name_of_interest(3), 'interests/3') %></h4>
               <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch.</p>
               <ul>
-                <li><%= random_three_activities(3) %></li>
+                <% random_three_subactivities(3).each do |sentence| %>
+                  <li><%= sentence %></li>
+                <% end %>
               </ul>
             </div>
           </div>
@@ -81,7 +86,9 @@
               <h4><%= link_to(name_of_interest(4), 'interests/4') %></h4>
               <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch.</p>
               <ul>
-                <li><%= random_three_activities(4) %></li>
+                <% random_three_subactivities(4).each do |sentence| %>
+                  <li><%= sentence %></li>
+                <% end %>
               </ul>
             </div>
           </div>
@@ -102,7 +109,9 @@
               <h4><%= link_to(name_of_interest(5), 'interests/5') %></h4>
               <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch.</p>
               <ul>
-                <li><%= random_three_activities(5) %></li>
+                <% random_three_subactivities(5).each do |sentence| %>
+                  <li><%= sentence %></li>
+                <% end %>
               </ul>
             </div>
           </div>
@@ -123,7 +132,9 @@
               <h4><%= link_to(name_of_interest(6), 'interests/6') %></h4>
               <p>Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch.</p>
               <ul>
-                <li><%= random_three_activities(6) %></li>
+                <% random_three_subactivities(6).each do |sentence| %>
+                  <li><%= sentence %></li>
+                <% end %>
               </ul>
             </div>
           </div>

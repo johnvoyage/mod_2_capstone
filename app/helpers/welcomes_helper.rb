@@ -12,18 +12,21 @@ module WelcomesHelper
     # .map do |activity|
     #   activity.name
     # end
+
   end
 
   def random_three_subactivities(interest_id)
-    random_three = random_three_activities(interest_id)
-    random_three.map do |activity|
+    activities = random_three_activities(interest_id)
+    subactivities = []
+    activities.each do |activity|
+      subactivities  <<
       Subactivity.all.select do |subactivity|
         subactivity.activity_id == activity.id
-      end.compact.flatten
+      end.sample(1)[0]
     end
+    byebug
+    [activities, subactivities]
   end
-
-
 
 
   # def random_three_subactivities
