@@ -6,7 +6,7 @@
     <title>Mod2Capstone</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Muli|Poppins|Roboto+Mono|Titillium+Web" rel="stylesheet">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous"> -->
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -15,15 +15,15 @@
 
   <body class="has-navbar-fixed-top">
 
-  <div class="bg">
+  <!-- <div class="bg">
     <%= image_tag("copenhagen-2.jpg", :alt => "Copenhagen", :id => "bg-image-1", :class => "bg-image") %>
-  </div>
+  </div> -->
 
     <!-- Navbar -->
     <nav class="navbar is-dark is-fixed-top is-transparent is-boxed" role="navigation" aria-label="main navigation">
       <div class="container">
         <div class="navbar-brand">
-          <%# link_to "", root_path, class: "navbar-item" %>
+          <%= link_to "", root_path, class: "navbar-item" %>
           <a class="navbar-item" href="">
             <div style="font-size:1rem">
               <i class="fa fa-users fa-3x"></i>

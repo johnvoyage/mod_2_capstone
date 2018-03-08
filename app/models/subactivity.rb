@@ -4,6 +4,8 @@ class Subactivity < ApplicationRecord
   has_many :choices
   has_many :users, through: :choices
 
+  include SubactivitiesHelper
+
   def all_users_ids
     Choice.all.select do |choice|
       choice.subactivity_id == self.id
@@ -13,9 +15,18 @@ class Subactivity < ApplicationRecord
   end
 
   def all_users
+    # byebug
     User.all.select do |user|
       all_users_ids.include?(user.id)
     end
+  end
+
+  def interest_name
+    Interest.find(Activity.find(activity_id).interest_id).name.downcase
+  end
+
+  def activity_name
+    Activity.find(activity_id).name
   end
 
 end

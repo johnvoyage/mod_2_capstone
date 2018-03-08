@@ -24,7 +24,8 @@ module WelcomesHelper
         subactivity.activity_id == activity.id
       end.sample(1)[0]
     end
-    [activities, subactivities]
+    # byebug
+    [activities, subactivities].flatten
   end
 
 
@@ -35,8 +36,8 @@ module WelcomesHelper
   #   end.sample(3)
   # end
 
-  def interest_example(interest_num, sample_num)
-    sample = random_three_interests[sample_num-1]
-    "I'm interested in #{name_of_interest[interest_num]}"
-  end
+  # def interest_example(interest_num, sample_num)
+  #   sample = random_three_interests[sample_num-1]
+  #   "I'm interested in #{name_of_interest[interest_num]}"
+  # end
 end
