@@ -51,6 +51,8 @@ group :development do
 
   ### ANTHONY/JOHN ADDS
   gem 'rails-erd', require: false
+  gem 'rest-client'
+  gem 'json'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
