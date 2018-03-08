@@ -8,7 +8,10 @@
 <h1>
 
 <h1><%= "We're interested in #{@subactivity.interest_name} #{@subactivity.activity_name}: #{@subactivity.name}" %></h1>
-
+<br>
+<h2><%= @subactivity.description %>
+<br>
+<br>
 <!-- member list -->
 <ul>
   <% @subactivity.all_users.each do |user| %>
