@@ -40,6 +40,7 @@ class Subactivity < ApplicationRecord
 
   def created_month_day_year
     updated_at.strftime("%B %d, %Y")
+  end
 
   def insert_preposition
     case Interest.find(Activity.find(activity_id).interest_id).id

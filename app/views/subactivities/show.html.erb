@@ -1,58 +1,96 @@
-<h1><%= @subactivity.group_interest_phrase %></h1>
-<br>
-<h2><%= @subactivity.description %>
-<br>
-<br>
-<h2>Created at: <%= @subactivity.created_month_day_year %></h2>
-<br>
-<h2>Latest update: <%= @subactivity.updated_month_day_year %></h2>
-<br>
 
+<div class="column is-8 is-offset-2">
+  <div class="box banner-box cta ">
+      <p class="has-text-centered">
+        <%= @subactivity.group_interest_phrase %>
+      </p>
+  </div>
+</div>
+<div class="column is-12">
+  <div class="box banner-box cta big-box">
+      <p class="has-text-centered">
+        <%= @subactivity.description %>
+      </p>
+  </div>
+</div>
 
-<h3>-----MEMBER LIST-----</h3>
-<ul>
-  <% @subactivity.all_users.each_with_index do |user, index| %>
-    <li>
-      <%= index + 1 %>.)
-      <%= user.first_name %> <%= user.last_name %>:
-      <%= link_to(user.email, user_path(user)) %><br>
-    </li>
-  <% end %>
-</ul>
-<br>
 
 <section class="container">
     <div class="sandbox">
-      <div class="column is-4">
+      <div class="columns">
 
-          <%# byebug %>
-          <% @subactivity.related_urls_hash(@subactivity.group_interest_phrase).first[1].each do |item| %>
+        <div class="column is-4">
+            <% @subactivity.related_urls_hash(@subactivity.group_interest_phrase).first[1].each do |item| %>
+            <div class="tile is-ancestor">
+              <div class="tile is-parent">
+                <article class="tile is-child notification is-white">
+
+                  <% if item["pagemap"] %>
+                    <div class="is-flex is-horizontal-center">
+                      <%= image_tag(item["pagemap"]["cse_thumbnail"][0]["src"]) %><br>
+                    </div>
+                  <% else %>
+                    <div class="is-flex is-horizontal-center">
+                      <%= image_tag("https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQcWaexBm3uDK3a32aSEYoZe-bCiusGnX1ana5bVPcg2XS8r8Qt6r5muwD2") %>
+                    </div>
+                  <% end %>
+                  <div class="has-text-centered">
+                    <%= link_to item["title"], item["link"], target: "_blank" %>
+                    <!-- <a href="#{item["link"]}"><%# item["title"] %></a> -->
+                  </div>
+                  <div class="has-text-justified">
+                    <p><%= item["snippet"] %></p>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <% end %>
+        </div>
+
+        <div class="column is-8">
           <div class="tile is-ancestor">
             <div class="tile is-parent">
-              <article class="tile is-child notification is-white">
-
-                <% if item["pagemap"] %>
-                  <div class="is-flex is-horizontal-center">
-                    <%= image_tag(item["pagemap"]["cse_thumbnail"][0]["src"]) %><br>
-                  </div>
-                <% else %>
-                  <div class="is-flex is-horizontal-center">
-                    <%= image_tag("https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQcWaexBm3uDK3a32aSEYoZe-bCiusGnX1ana5bVPcg2XS8r8Qt6r5muwD2") %>
-                  </div>
-                <% end %>
-                <div class="has-text-centered">
-                  <a href="#{item["link"]}"><%= item["title"] %></a>
-                </div>
-                <div class="has-text-justified">
-                  <p><%= item["snippet"] %></p>
-                </div>
+              <article class="tile is-child notification is-white map-tile">
+                <% term = @subactivity.name.split.join("%20") %>
+                <!-- API key  AIzaSyD7yUUJjuy7n4GbG-sDK1qJh3zfTMthgpE -->
+                <!-- <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=Moving%20to%20Japan&key=AIzaSyD7yUUJjuy7n4GbG-sDK1qJh3zfTMthgpE" allowfullscreen></iframe> -->
+                <!-- <iframe src=“https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13753278.300434155!2d129.40218543774247!3d32.693119338481715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34674e0fd77f192f%3A0xf54275d47c665244!2sJapan!5e0!3m2!1sen!2sus!4v1520558754242” width=“600" height=“450” frameborder=“0" style=“border:0” allowfullscreen></iframe> -->
+                <iframe width="100%" height="600" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=<%= term %>&key=AIzaSyD7yUUJjuy7n4GbG-sDK1qJh3zfTMthgpE" allowfullscreen></iframe>
               </article>
             </div>
           </div>
-          <% end %>
 
+          <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <article class="tile is-child notification is-white map-tile">
+                <h3>-----MEMBER LIST-----</h3>
+                <ul>
+                  <% @subactivity.all_users.each_with_index do |user, index| %>
+                    <li>
+                      <%= index + 1 %>.)
+                      <%= user.first_name %> <%= user.last_name %>:
+                      <%= link_to(user.email, user_path(user)) %><br>
+                    </li>
+                  <% end %>
+                </ul>
+                <br>
+              </article>
+            </div>
+          </div>
+
+          <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <article class="tile is-child notification is-white map-tile">
+                <h2class="has-text-centered">Created at: <%= @subactivity.created_month_day_year %></h2>
+                <br>
+                <h2class="has-text-centered">Latest update: <%= @subactivity.updated_month_day_year %></h2>
+              </article>
+            </div>
+          </div>
       </div>
+
     </div>
+  </div>
 </section>
 
 <% if is_admin? %>

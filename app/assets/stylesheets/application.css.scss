@@ -18,6 +18,8 @@
  font-family: 'Titillium Web', sans-serif;
  font-family: 'Roboto Mono', monospace;
  font-family: 'Indie Flower', cursive; */
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 .main-container {
   margin-top: 6rem;
@@ -54,11 +56,28 @@
 .banner-box {
   font-size: 1.5rem;
   font-weight: 600;
-  /* font-family: 'Poppins', sans-serif; */
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Indie Flower', cursive; */
   /* font-family: 'Titillium Web', sans-serif; */
   /* font-family: 'Roboto Mono', monospace; */
   /* font-family: 'Muli', sans-serif; */
+}
+.box {
+  margin-top: 1rem;
+  background-color: #4e97e6e8;
+}
+.box p {
+  color: #272626;
+}
+div.big-box {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+div.description-box {
+  font-size: 1.2rem;
+  font-weight: 300;
 }
 
 .welcome-index-container {
@@ -86,6 +105,17 @@
 .is-horizontal-center {
   justify-content: center;
 }
+.notification.is-white {
+  background-color: #4e97e6e8;
+  color: #0a0a0a;
+}
+div.is-flex.is-horizontal-center img {
+  padding: 1rem;
+}
+/* Tile map */
+.map-tile {
+  padding: 20px;
+}
 
 .fa {
   display: inline-block;
@@ -93,11 +123,6 @@
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
-}
-
-.box {
-  margin-top: 4rem;
-  background-color: #2d8cd5e6;;
 }
 
 .avatar {

@@ -29,6 +29,12 @@
               </p>
           </div>
 
+          <div class="box banner-box cta description-box">
+              <p class="has-text-centered">
+                <%= @activity.description %>
+              </p>
+          </div>
+
           <%= form_for @subactivity do |f| %>
             <%# f.label :name, "#{@interest.what_activity_question}" %>
             <div class="field">
