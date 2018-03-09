@@ -1,11 +1,10 @@
 class UsersController < ApplicationController
 
   before_action :user_match
-  skip_before_action :user_match, only: [:new, :create]
+  skip_before_action :user_match, only: [:new, :create, :show]
   skip_before_action :require_login, only: [:new, :create]
 
-
-
+  include UsersHelper
 
   def index
   end
@@ -26,6 +25,24 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to @user
+    else
+      render :new
+    end
+  end
+
+  def destroy
+    @user.delete
+    redirect_to root_path
   end
 
   private

@@ -8,6 +8,11 @@ module SubactivitiesHelper
     Choice.find_or_create_by(user_id: session[:user_id], subactivity_id: subactivity.id)
   end
 
+  def is_admin?
+    User.find(session[:user_id]).admin
+  end
+
+
   # def related_urls(term)
   #   agent = Mechanize.new
   #   agent.set_proxy '78.186.178.153', 8080
@@ -33,7 +38,7 @@ module SubactivitiesHelper
   # end
 #
 # THIS IS THE RELATED CODE THAT WAS ORIGINALLY IN SUBACTIVITIES SHOW
-# 
+#
   # <ul>
   #   <% @subactivity.related_urls(@subactivity.name).each do |url| %>
   #     <li><%= url %></li>

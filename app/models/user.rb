@@ -18,4 +18,33 @@ class User < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
+  def all_subactivities_ids
+    Choice.all.select do |choice|
+      choice.user_id == self.id
+    end.map do |choice|
+      choice.subactivity_id
+    end
+  end
+
+  def all_subactivities
+    # byebug
+    Subactivity.all.select do |subactivity|
+      all_subactivities_ids.include?(subactivity.id)
+    end
+  end
+
+  def updated_month_day_year
+    updated_at.strftime("%B %d, %Y")
+  end
+
+  def created_month_day_year
+    updated_at.strftime("%B %d, %Y")
+  end
+
+  def select_choice(index)
+    Choice.all.select do |choice|
+      choice.user_id == self.id
+    end[index]
+  end
+
 end

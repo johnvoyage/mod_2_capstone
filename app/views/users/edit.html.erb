@@ -1,0 +1,88 @@
+
+<% provide(:title, 'Edit') %>
+<!-- <h1>Sign up</h1> -->
+
+<section class="hero is-fullheight">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="column is-4 is-offset-4">
+        <div class="box">
+          <h3 class="title">Edit Profile</h3>
+          <p class="subtitle">Change your details to proceed.</p>
+        </div>
+        <div class="box">
+          <figure class="avatar">
+            <img src="https://placehold.it/128x128">
+          </figure>
+
+          <%= form_for @user do |f| %>
+            <%= render 'shared/error_messages' %>
+            <!-- <%= f.label :first_name %> -->
+            <div class="field">
+              <div class="control">
+                <%= f.text_field :first_name, class: "input", placeholder: "First Name", required: true, autofocus: true %>
+              </div>
+            </div>
+
+            <!-- <%= f.label :last_name %> -->
+            <div class="field">
+              <div class="control">
+                <%= f.text_field :last_name, class: "input", placeholder: "Last Name", required: true, autofocus: false %>
+              </div>
+            </div>
+
+            <!-- <%= f.label :email %> -->
+            <div class="field">
+              <div class="control">
+                <%= f.text_field :email, class: "input", placeholder: "Email", required: true, autofocus: false %>
+              </div>
+            </div>
+
+            <!-- <%= f.label :city %> -->
+            <div class="field">
+              <div class="control">
+                <%= f.text_field :city, class: "input", placeholder: "City", required: true, autofocus: false %>
+              </div>
+            </div>
+
+            <!-- <%= f.label :state %> -->
+            <div class="field">
+              <div class="control">
+                <%= f.text_field :state, class: "input", placeholder: "State", required: true, autofocus: false %>
+              </div>
+            </div>
+
+            <!-- <%= f.label :password %> -->
+            <div class="field">
+              <div class="control">
+                <%= f.password_field :password, class: "input", placeholder: "Password", required: true, autofocus: false %>
+              </div>
+            </div>
+
+            <!-- <%= f.label :password_confirmation, "Confirmation" %> -->
+            <div class="field">
+              <div class="control">
+                <%= f.password_field :password_confirmation, class: "input", placeholder: "Confirm Password", required: true, autofocus: false %>
+              </div>
+            </div>
+
+            <%# f.check_box %>
+
+            <%= f.label :admin %>
+            <%= f.check_box(:admin, class: "checkbox" ) %>
+
+            <%= f.submit "Submit changes!", class: "button is-dark is-fullwidth" %>
+            <!-- "button is-block is-large is-fullwidth" -->
+
+          <% end %>
+
+        </div>
+        <p class="has-text-grey">
+          <%= link_to "Back to profile", user_path(@user) %> &nbsp;·&nbsp;
+          <%= link_to "Back to home page", root_path %><br>
+          &nbsp;·&nbsp;<%= link_to "DELETE PROFILE", @user, method: :delete %>&nbsp;·&nbsp;
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

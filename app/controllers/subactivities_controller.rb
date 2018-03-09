@@ -51,7 +51,7 @@ class SubactivitiesController < ApplicationController
 
   def destroy
     @subactivity.destroy
-    redirect_to activities_path
+    redirect_to root_path
   end
 
   private

@@ -12,19 +12,32 @@
 <h2><%= @subactivity.description %>
 <br>
 <br>
-<!-- member list -->
+<h2>Created at: <%= @subactivity.created_month_day_year %></h2>
+<br>
+<h2>Latest update: <%= @subactivity.updated_month_day_year %></h2>
+<br>
+
+
+<h3>-----MEMBER LIST-----</h3>
 <ul>
-  <% @subactivity.all_users.each do |user| %>
-    <li><%= user.first_name %> <%= user.last_name %> <br>
-    <%= link_to(user.email, user_path(user)) %></li>
+  <% @subactivity.all_users.each_with_index do |user, index| %>
+    <li>
+      <%= index + 1 %>.)
+      <%= user.first_name %> <%= user.last_name %>:
+      <%= link_to(user.email, user_path(user)) %><br>
+    </li>
   <% end %>
 </ul>
+<p>--------------<p>
 <!-- message board -->
 <!-- planning calendar -->
 <!-- embed google map -->
 <!-- pull in a list of related links? -->
 
-
+<% if is_admin? %>
+  <%= link_to "Edit subactivity", edit_subactivity_path(@subactivity) %><br>
+  <%= link_to "Delete subactivity", @subactivity, method: :delete %>
+<% end %>
 
 
 

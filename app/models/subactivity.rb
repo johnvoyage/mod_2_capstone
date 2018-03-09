@@ -29,4 +29,16 @@ class Subactivity < ApplicationRecord
     Activity.find(activity_id).name
   end
 
+  def blurb
+    description[0..100] + "..."
+  end
+
+  def updated_month_day_year
+    updated_at.strftime("%B %d, %Y")
+  end
+
+  def created_month_day_year
+    updated_at.strftime("%B %d, %Y")
+  end
+
 end

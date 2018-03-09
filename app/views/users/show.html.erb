@@ -1,13 +1,37 @@
+<h1>
+  <%= @user.display_name %>
+  's profile page
+  <% if @user.admin %> (Administrator)
+  <% end %>
+</h1>
 <br>
+<h2>email: <%= @user.email %></h2>
 <br>
+<h2>City: <%= @user.city %> , State: <%= @user.state %></h2>
 <br>
+<h2>Member since: <%= @user.created_month_day_year %> </h2>
 <br>
-<br>
-<br>
-<br>
+<h2>Last update: <%= @user.updated_month_day_year %> </h2>
 <br>
 
-<!-- list all subactivities -->
-<h1><%= @user.display_name %>'s profile page</h1>
+<h3>---  Subactivities  ---</h3>
+<ul>
+  <% @user.all_subactivities.each_with_index do |subactivity, index| %>
+    <li>
+      <h4>
+        <% if is_user? %>
+          ||<%= link_to "Leave", @user.select_choice(index), method: :delete %>||
+        <% end %>
+        <%= index + 1 %>.)
+        <%= link_to(subactivity.name, subactivity_path(subactivity))%>:
+        <%= subactivity.blurb %>
+      </h4>
+    </li>
+  <% end %>
+</ul>
+<p>--------------<p>
 
-<%= link_to 'Logout', logout_path(@user), method: :delete %>
+
+<% if is_user? %>
+  <%= link_to "Edit/delete profile", edit_user_path(@user) %>
+<% end %>
