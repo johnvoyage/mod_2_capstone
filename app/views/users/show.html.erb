@@ -1,37 +1,51 @@
-<h1>
-  <%= @user.display_name %>
-  's profile page
-  <% if @user.admin %> (Administrator)
-  <% end %>
-</h1>
-<br>
-<h2>email: <%= @user.email %></h2>
-<br>
-<h2>City: <%= @user.city %> , State: <%= @user.state %></h2>
-<br>
-<h2>Member since: <%= @user.created_month_day_year %> </h2>
-<br>
-<h2>Last update: <%= @user.updated_month_day_year %> </h2>
-<br>
+<div class="column is-12 ">
+  <div class="box   has-text-centered">
 
-<h3>---  Subactivities  ---</h3>
-<ul>
-  <% @user.all_subactivities.each_with_index do |subactivity, index| %>
-    <li>
-      <h4>
-        <% if is_user? %>
-          ||<%= link_to "Leave", @user.select_choice(index), method: :delete %>||
+
+      <h1>
+        <%= @user.display_name %>
+        's profile page
+        <% if @user.admin %> (Administrator)
         <% end %>
-        <%= index + 1 %>.)
-        <%= link_to(subactivity.name, subactivity_path(subactivity))%>:
-        <%= subactivity.blurb %>
-      </h4>
-    </li>
-  <% end %>
-</ul>
-<p>--------------<p>
+      </h1>
+      <br>
+      <h2>email: <%= @user.email %></h2>
+      <br>
+      <h2>City: <%= @user.city %> , State: <%= @user.state %></h2>
+      <br>
+      <h2>Member since: <%= @user.created_month_day_year %> </h2>
+      <br>
+      <h2>Last update: <%= @user.updated_month_day_year %> </h2>
+      <br>
+
+      <!-- <div class="column is-4 is-offset-4"> -->
+        <!-- <div class="box is-dark"> -->
+          <h2 class="underline">Subactivities</h2>
+        <!-- </div> -->
+      <!-- </div> -->
+      <div class="column is-10 has-text-left">
+      <ul>
+        <% @user.all_subactivities.each_with_index do |subactivity, index| %>
+          <li>
+            <h4>
+              <%= index + 1 %>.)
+              <%= link_to(subactivity.name, subactivity_path(subactivity), class: "subactivity-path")%>:
+              <%= subactivity.blurb %>
+              <% if is_user? %>
+                <%= link_to "Leave", @user.select_choice(index), method: :delete, class: "button is-danger" %>
+              <% end %>
+            </h4><br>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+      <!-- <p>--------------<p> -->
 
 
-<% if is_user? %>
-  <%= link_to "Edit/delete profile", edit_user_path(@user) %>
-<% end %>
+      <% if is_user? %>
+        <%= link_to "Edit/delete profile", edit_user_path(@user), class: "button is-dark edit-delete" %>
+      <% end %>
+
+
+  </div>
+</div>

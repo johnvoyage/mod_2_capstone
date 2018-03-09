@@ -69,6 +69,12 @@
 .box p {
   color: #272626;
 }
+.box h1 {
+  font-size: 2rem;
+}
+.box h2 {
+  font-size: 1.5rem;
+}
 div.big-box {
   font-size: 1.2rem;
   font-weight: 300;
@@ -78,6 +84,10 @@ div.big-box {
 div.description-box {
   font-size: 1.2rem;
   font-weight: 300;
+}
+.avatar-box {
+  padding-top: 2rem;
+  margin-top: 3rem;
 }
 
 .welcome-index-container {
@@ -135,4 +145,43 @@ div.is-flex.is-horizontal-center img {
   border-radius: 50%;
   -webkit-box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
   box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+}
+
+h4.is-dark {
+  color: #3f3e44;
+}
+
+.subactivity-path {
+  color: #181623;
+}
+.subactivity-path:hover {
+  color: #181623;
+  text-decoration: underline;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.edit-delete {
+  margin-top: 1rem;
+}
+
+.edit-sub, .delete-sub {
+  float: right;
+}
+.created-at, .latest-update {
+  float: left;
+}
+
+.is-danger {
+  margin-left: .5rem;
+}
+
+.column.is-10.has-text-left {
+  margin: auto;
+}
+
+.control textarea {
+  height: 10rem;
 }

@@ -31,7 +31,7 @@
                     </div>
                   <% else %>
                     <div class="is-flex is-horizontal-center">
-                      <%= image_tag("https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQcWaexBm3uDK3a32aSEYoZe-bCiusGnX1ana5bVPcg2XS8r8Qt6r5muwD2") %>
+                      <%= image_tag("farneysucks.jpg") %>
                     </div>
                   <% end %>
                   <div class="has-text-centered">
@@ -81,19 +81,18 @@
           <div class="tile is-ancestor">
             <div class="tile is-parent">
               <article class="tile is-child notification is-white map-tile">
-                <h2class="has-text-centered">Created at: <%= @subactivity.created_month_day_year %></h2>
+                <span class="created-at">Created at: <%= @subactivity.created_month_day_year %></span>
                 <br>
-                <h2class="has-text-centered">Latest update: <%= @subactivity.updated_month_day_year %></h2>
+                <span class="latest-update">Latest update: <%= @subactivity.updated_month_day_year %></span>
               </article>
             </div>
           </div>
+          <% if is_admin? %>
+            <%= link_to "Edit subactivity", edit_subactivity_path(@subactivity), class: "button is-dark" %>
+            <%= link_to "Delete subactivity", @subactivity, method: :delete, class: "button is-danger" %>
+          <% end %>
       </div>
 
     </div>
   </div>
 </section>
-
-<% if is_admin? %>
-  <%= link_to "Edit subactivity", edit_subactivity_path(@subactivity) %><br>
-  <%= link_to "Delete subactivity", @subactivity, method: :delete %>
-<% end %>

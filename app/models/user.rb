@@ -38,7 +38,7 @@ class User < ApplicationRecord
   end
 
   def created_month_day_year
-    updated_at.strftime("%B %d, %Y")
+    created_at.strftime("%B %d, %Y")
   end
 
   def select_choice(index)

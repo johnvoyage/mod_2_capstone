@@ -31,7 +31,11 @@ class Subactivity < ApplicationRecord
 
 
   def blurb
-    description[0..100] + "..."
+    if description
+      description[0..100] + "..."
+    else
+      "No description"
+    end
   end
 
   def updated_month_day_year
@@ -39,7 +43,7 @@ class Subactivity < ApplicationRecord
   end
 
   def created_month_day_year
-    updated_at.strftime("%B %d, %Y")
+    created_at.strftime("%B %d, %Y")
   end
 
   def insert_preposition

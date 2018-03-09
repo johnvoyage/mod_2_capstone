@@ -1,0 +1,28 @@
+
+<section class="hero is-fullheight">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="column is-8 is-offset-2">
+        <div class="box banner-box">
+          <h3 class="">Edit Your Chosen Activity</h3>
+        </div>
+        <div class="box">
+          <%= form_for @subactivity do |f| %>
+            <div class="field">
+              <div class="control">
+                <%= f.text_field :name, class: "input", placehoder: "Name", required: true, autofocus: true %>
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <%= f.text_area :description, class: "input", placehoder: "Description", required: true, autofocus: false %>
+              </div>
+            </div>
+
+            <%= f.submit "Submit", class: "button is-dark" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

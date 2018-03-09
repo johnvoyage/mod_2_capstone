@@ -11,6 +11,7 @@ class SubactivitiesController < ApplicationController
 
   def new
     if params[:name]
+      # byebug
       @subactivity = Subactivity.new(name: params[:name], interest_id: params[:interest_id])
     else
       @subactivity = Subactivity.new(interest_id: params[:interest_id])
