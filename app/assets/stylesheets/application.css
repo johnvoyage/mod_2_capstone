@@ -82,6 +82,11 @@
   padding-top: 1rem;
 }
 
+/* Tile images */
+.is-horizontal-center {
+  justify-content: center;
+}
+
 .fa {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
