@@ -1,50 +1,47 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<h1>
-
-<h1><%= "We're interested in #{@subactivity.interest_name} #{@subactivity.activity_name}: #{@subactivity.name}" %></h1>
+<h1><%= @subactivity.group_interest_phrase %></h1>
 <br>
 <h2><%= @subactivity.description %>
 <br>
 <br>
-<!-- member list -->
+
 <ul>
   <% @subactivity.all_users.each do |user| %>
     <li><%= user.first_name %> <%= user.last_name %> <br>
     <%= link_to(user.email, user_path(user)) %></li>
   <% end %>
 </ul>
+<br>
 
-<%= @subactivity.related_urls("Learning a foreign language") %>
-<!-- message board -->
-<!-- planning calendar -->
-<!-- embed google map -->
-<!-- pull in a list of related links? -->
+<section class="container">
+    <div class="sandbox">
+      <div class="column is-4">
 
+          <%# byebug %>
+          <% @subactivity.related_urls_hash(@subactivity.group_interest_phrase).first[1].each do |item| %>
+          <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <article class="tile is-child notification is-white">
 
+                <% if item["pagemap"] %>
+                  <div class="is-flex is-horizontal-center">
+                    <%= image_tag(item["pagemap"]["cse_thumbnail"][0]["src"]) %><br>
+                  </div>
+                <% else %>
+                  <div class="is-flex is-horizontal-center">
+                    <%= image_tag("https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQcWaexBm3uDK3a32aSEYoZe-bCiusGnX1ana5bVPcg2XS8r8Qt6r5muwD2") %>
+                  </div>
+                <% end %>
+                <div class="has-text-centered">
+                  <a href="#{item["link"]}"><%= item["title"] %></a>
+                </div>
+                <div class="has-text-justified">
+                  <p><%= item["snippet"] %></p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <% end %>
 
-
-
-
-
-
-
-<!-- HOBBYISTS -->
-  <!-- if commitment is 1 -->
-    <!-- WEBPAGE FOR HOBBYISTS -->
-  <!-- end -->
-
-<!-- PART TIMERS -->
-  <!-- if commitment is 2 -->
-    <!-- WEBPAGE FOR PART TIMERS -->
-  <!-- end -->
-
-<!-- INTENSE -->
-  <!-- if commitment is 2 -->
-    <!-- WEBPAGE FOR PART TIMERS -->
-  <!-- end -->
+      </div>
+    </div>
+</section>

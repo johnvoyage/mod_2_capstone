@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 20180307394235) do
 
   create_table "activities", force: :cascade do |t|
     t.string "name"
-    t.integer "commitment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
@@ -28,13 +27,6 @@ ActiveRecord::Schema.define(version: 20180307394235) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "interest_activities", force: :cascade do |t|
-    t.integer "interest_id"
-    t.integer "activity_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "interests", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -44,15 +36,7 @@ ActiveRecord::Schema.define(version: 20180307394235) do
   create_table "subactivities", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.integer "commitment"
     t.integer "activity_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "user_interests", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "interest_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

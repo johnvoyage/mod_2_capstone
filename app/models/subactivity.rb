@@ -29,4 +29,25 @@ class Subactivity < ApplicationRecord
     Activity.find(activity_id).name
   end
 
+  def insert_preposition
+    case Interest.find(Activity.find(activity_id).interest_id).id
+    when 2 || 4
+      " to "
+    when 3
+      " for "
+    else
+      ""
+    end
+  end
+
+  def group_interest_phrase
+    "We're interested in #{self.interest_name} #{self.activity_name}: #{self.name}"
+  end
+
+
+  def related_urls_hash(term)
+    search = "https://www.googleapis.com/customsearch/v1?key=AIzaSyBFAaw-FrIqzQfUogDxkx-G7w844ACyeGM&cx=004691144422618487822:v5djm-re6s8&num=5&fields=items(title,link,displayLink,snippet,pagemap/cse_thumbnail/src)&q=#{term}"
+    JSON.parse(RestClient.get(search))
+  end
+
 end
