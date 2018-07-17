@@ -19,19 +19,19 @@ https://www.youtube.com/watch?v=O7oKxrhMfm4&feature=youtu.be
 ## Code Example
 One of the hardest parts we found was trying to abstract out code that kept the website reading as proper english:
 
-#def what_subactivity_question
-#  case self.interest_id
-#  when 1
-#    "Which #{self.name} are you interested in learning?"
-#  when 2
-#    "What do you want to do in #{self.name}?"
-#  when 3
-#    "How would you like to help #{self.name}?"
-#  when 4
-#    "Where in #{self.name} would you like to move?"
-#  when 5
-#    "Which #{self.name} are you interested in playing?"
-#  when 6
-#    "What kind of #{self.name} are you interested in creating?"
-#  end
-#end
+def what_subactivity_question<br/>
+  case self.interest_id<br/>
+  when 1<br/>
+    "Which #{self.name} are you interested<br/> in learning?"<br/>
+  when 2<br/>
+    "What do you want to do in<br/> #{self.name}?"<br/>
+  when 3<br/>
+    "How would you like to help<br/> #{self.name}?"<br/>
+  when 4<br/>
+    "Where in #{self.name} would you like<br/> to move?"<br/>
+  when 5<br/>
+    "Which #{self.name} are you interested<br/> in playing?"<br/>
+  when 6<br/>
+    "What kind of #{self.name} are you<br/> interested in creating?"<br/>
+  end<br/>
+end<br/>
