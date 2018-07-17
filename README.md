@@ -20,18 +20,18 @@ https://www.youtube.com/watch?v=O7oKxrhMfm4&feature=youtu.be
 One of the hardest parts we found was trying to abstract out code that kept the website reading as proper english:
 
 def what_subactivity_question<br/>
-  case self.interest_id<br/>
-  when 1<br/>
-    "Which #{self.name} are you interested<br/> in learning?"<br/>
-  when 2<br/>
-    "What do you want to do in<br/> #{self.name}?"<br/>
-  when 3<br/>
-    "How would you like to help<br/> #{self.name}?"<br/>
-  when 4<br/>
-    "Where in #{self.name} would you like<br/> to move?"<br/>
-  when 5<br/>
-    "Which #{self.name} are you interested<br/> in playing?"<br/>
-  when 6<br/>
-    "What kind of #{self.name} are you<br/> interested in creating?"<br/>
-  end<br/>
+&nbsp;&nbsp;case self.interest_id<br/>
+&nbsp;&nbsp;when 1<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"Which #{self.name} are you interested<br/> in learning?"<br/>
+&nbsp;&nbsp;when 2<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"What do you want to do in<br/> #{self.name}?"<br/>
+&nbsp;&nbsp;when 3<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"How would you like to help<br/> #{self.name}?"<br/>
+&nbsp;&nbsp;when 4<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"Where in #{self.name} would you like<br/> to move?"<br/>
+&nbsp;&nbsp;when 5<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"Which #{self.name} are you interested<br/> in playing?"<br/>
+&nbsp;&nbsp;when 6<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"What kind of #{self.name} are you<br/> interested in creating?"<br/>
+&nbsp;&nbsp;end<br/>
 end<br/>
