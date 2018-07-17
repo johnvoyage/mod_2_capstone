@@ -5,7 +5,7 @@ This is Connectly, an activity companion discovery tool inpired by Meetup.com
 Sites like Meetup and Facebook are bogged down by so many similar (if not identical) groups that users can find themselves having options paralysis. The idea behind Connectly is to make fewer groups for each activity, but ensuring that each groups are more committed.
 
 ## Build status
-This build is now deprecated. It was done as a paired programming project in one week by John York and Anthony Fields.
+This build is now deprecated. It was done as a paired programming project in one week by John York and Anthony Fields, who are considering picking it back up again as a serious web app. Any update will be posted here.
 
 ## Demo
 Here is a demo of the app:
