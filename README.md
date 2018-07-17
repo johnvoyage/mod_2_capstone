@@ -22,13 +22,13 @@ One of the hardest parts we found was trying to abstract out code that kept the 
 def what_subactivity_question<br/>
 &nbsp;&nbsp;case self.interest_id<br/>
 &nbsp;&nbsp;when 1<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;"Which #{self.name} are you interested<br/> in learning?"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"Which #{self.name} are you interested in learning?"<br/>
 &nbsp;&nbsp;when 2<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;"What do you want to do in<br/> #{self.name}?"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"What do you want to do in #{self.name}?"<br/>
 &nbsp;&nbsp;when 3<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;"How would you like to help<br/> #{self.name}?"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"How would you like to help #{self.name}?"<br/>
 &nbsp;&nbsp;when 4<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;"Where in #{self.name} would you like<br/> to move?"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"Where in #{self.name} would you like to move?"<br/>
 &nbsp;&nbsp;when 5<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;"Which #{self.name} are you interested in playing?"<br/>
 &nbsp;&nbsp;when 6<br/>
