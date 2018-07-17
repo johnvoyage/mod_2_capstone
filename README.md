@@ -30,8 +30,8 @@ def what_subactivity_question<br/>
 &nbsp;&nbsp;when 4<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;"Where in #{self.name} would you like<br/> to move?"<br/>
 &nbsp;&nbsp;when 5<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;"Which #{self.name} are you interested<br/> in playing?"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"Which #{self.name} are you interested in playing?"<br/>
 &nbsp;&nbsp;when 6<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;"What kind of #{self.name} are you<br/> interested in creating?"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"What kind of #{self.name} are you interested in creating?"<br/>
 &nbsp;&nbsp;end<br/>
 end<br/>
